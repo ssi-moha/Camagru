@@ -15,12 +15,10 @@
         <header class="col-md-12 text-center">
             <p>Hello</p>
         </header>
-        <form method="post" action="create_user.php">
+        <form method="post" action="check_user.php">
             <p>Nom d'utilisateur</p> <input name="username" value="" placeholder="Nom"></input>
             <p>Mot de passe</p> <input name="passwd" type="password" value=""></input>
-            <p>Confirmer Mot de passe</p> <input name="chk_passwd" type="password" value=""></input>
             <input name="submit" type="submit" value="OK"></input>
         </form>
     </body>
 </html>
-

@@ -3,12 +3,17 @@
 session_start();
 require_once "Controller/check_username.php";
 require_once "Entity/User.php";
+require_once "Entity/Photo.php";
 require_once "Model/create_user.php";
 require_once "Controller/isset_post.php";
 require_once "Controller/connect_user.php";
+require_once "Controller/create_upload_dir.php";
+require_once "Controller/upload_photo.php";
 require_once "Controller/check_email.php";
+require_once "Controller/check_extension.php";
 require_once "Controller/check_valid.php";
 require_once "Controller/control_sub.php";
+require_once "Controller/check_photo_format.php";
 require_once "Controller/set_string_confirm.php";
 require_once "db_connect.php";
 require_once "Model/get_user_by_username.php";
@@ -100,6 +105,11 @@ else if ($_GET['page'] == 'new')
       require "Views/new_photo.php";
       $view = ob_get_clean();
       require "Views/template.php";      
+}
+else if ($_GET['page'] == 'upload' && upload_photo($_POST, $_FILES) != FALSE)
+{
+      require "Views/template.php";
+      echo '<img class="fluid rounded mx-auto d-block" src=private/tmp/'.$_SESSION["url"].'></img>';
 }
 else
   require "Views/template.php";

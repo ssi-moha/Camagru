@@ -37,6 +37,5 @@
   </div>
   </nav>
     <?= $view?>
-	
   </body>
 </html>

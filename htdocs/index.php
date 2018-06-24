@@ -112,8 +112,11 @@ else if ($_GET['page'] == 'upload' && upload_photo($_POST, $_FILES) != FALSE)
       echo '<img class="fluid rounded mx-auto d-block" src=private/tmp/'.$_SESSION["url"].'></img>';
 }
 else
+{
   require "Views/template.php";
-
+  echo $_SESSION["error"];        
+  $_SESSION["error"] = NULL;
+}
 
 
 

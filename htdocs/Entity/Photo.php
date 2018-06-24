@@ -14,7 +14,6 @@
             {
                 if (check_format_photo($new_name) == FALSE)
                     return ;
-                create_user($new_username, $new_passwd, $new_email);
             }
 
             public function __destruct()
